@@ -1,0 +1,25 @@
+<%- include ("../templates/encabezado") %>
+<%- include ("../templates/menu") %>
+
+<div class="container mt-5">
+    <form action="/editarp" method="post">
+        <div class="card">
+            <div class="cad-header">
+                <h1>Modificar Producto</h1>
+            </div>
+            <div class="cad-body">
+                <input type="hidden"  value="<%= product.id%>" name="id" id="id" >
+                <input class="form-control mb-3" type="text" value="<%= product.nombre%>" name="nombre" id="nombre" placeholder="Nombre" autofocus>
+                <input class="form-control mb-3" type="text" value="<%= product.costo%>" name="costo" id="costo" placeholder="Costo" >
+                <input class="form-control mb-3" type="text" value="<%= product.brand%>" name="brand" id="brand" placeholder="Brand">
+                <input class="form-control mb-3" type="file" value="<%= product.foto%>" name="foto" id="foto" placeholder="foto">
+            </div>
+            <div class="cad-footer">
+                <button class="form-control btn btn-primary" type="submit">Modificar Producto</button>
+            </div>
+    </form>
+    </div>
+</div>
+
+
+<%- include("../templates/pie") %>

@@ -1,0 +1,108 @@
+<%- include ("../templates/encabezado") %>
+<%- include ("../templates/menu") %>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h1><align center>Productos</h1></align>
+                
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>nombre</th>
+                        <th>precio</th>
+                        <th>marca</th>
+                        <th>Foto</th>
+                        <th>Editar/Borrar</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                    productos.forEach((producto)=>{                
+                    %>
+                    <tr>
+                        <td><%= producto.id %></td>
+                        <td><%= producto.nombre %></td>
+                        <td><%= producto.costo %></td>
+                        <td><%= producto.brand %></td>
+                        <td><img src="/images/<%= producto.foto %>" width="100px"></td>
+                        <td>
+                            <a href="/editarp/<%= producto.id %>">Editar</a>
+                            <a href="/borrarp/<%= producto.id %>">Borrar</a>
+                        </td>
+                    </tr>
+                    <%
+                    });
+                    %>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer"></div>       
+    </div>
+</div>
+
+
+<style>
+  /* Estilo para el encabezado de la tabla */
+  .card-header {
+    background-color: #007BFF; /* Cambia el color de fondo del encabezado a azul brillante */
+    color: #fff; /* Cambia el color del texto a blanco */
+    text-align: center; /* Centra el texto en el encabezado */
+  }
+
+  /* Estilo para el título de la página */
+  .card-header h1 {
+    font-size: 24px; /* Cambia el tamaño de fuente del título a tu preferencia */
+    margin: 0; /* Elimina el margen superior e inferior para que quede centrado */
+  }
+
+  /* Estilo para la tabla */
+  .table {
+    margin-top: 20px; /* Agrega espacio superior a la tabla */
+    text-align: center; /* Centra el texto en el encabezado */
+
+  }
+
+  /* Estilo para las filas impares de la tabla */
+  .table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Cambia el color de fondo de las filas impares */
+    text-align: center; /* Centra el texto en el encabezado */
+
+  }
+
+  /* Estilo para las celdas de encabezado de la tabla */
+  .table th {
+    background-color: #007BFF; /* Cambia el color de fondo de las celdas de encabezado a azul brillante */
+    color: #fff; /* Cambia el color del texto en las celdas de encabezado a blanco */
+  }
+
+  /* Estilo para las celdas de datos de la tabla */
+  .table td {
+    text-align: center; /* Centra el texto en las celdas de datos */
+    text-align: center; /* Centra el texto en el encabezado */
+
+  }
+
+  /* Estilo para los enlaces "Editar" y "Borrar" */
+  .table a {
+    color: #007BFF; /* Cambia el color de los enlaces a azul brillante */
+    text-decoration: none; /* Elimina la subrayado predeterminado de los enlaces */
+    margin-right: 10px; /* Agrega un espacio entre los enlaces */
+  }
+
+  /* Estilo para el pie de página */
+  .card-footer {
+    background-color: #007BFF; /* Cambia el color de fondo del pie de página a azul brillante */
+    color: #fff; /* Cambia el color del texto del pie de página a blanco */
+    text-align: center; /* Centra el texto en el pie de página */
+    padding: 10px 0; /* Agrega espacio de relleno alrededor del pie de página */
+  }
+</style>
+
+
+<%- include("../templates/pie") %>

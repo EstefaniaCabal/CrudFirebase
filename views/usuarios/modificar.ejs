@@ -1,0 +1,23 @@
+<%- include ("../templates/encabezado") %>
+<%- include ("../templates/menu") %>
+
+<div class="container mt-5">
+    <form action="/editar" method="post">
+        <div class="card">
+            <div class="cad-header">
+                <h1>Modificar Usuario</h1>
+            </div>
+            <div class="cad-body">
+                <input type="hidden"  value="<%= user.id%>" name="id" id="id" >
+                <input class="form-control mb-3" type="text" value="<%= user.nombre%>" name="nombre" id="nombre" placeholder="Nombre" autofocus>
+                <input class="form-control mb-3" type="text" value="<%= user.usuario%>" name="usuario" id="usuario" placeholder="Usuario" >
+                <input class="form-control mb-3" type="password" value="<%= user.password%>" name="password" id="password" placeholder="password">
+                <input class="form-control mb-3" type="file" value="<%= user.foto%>" name="foto" id="foto" placeholder="foto">
+            </div>
+            <div class="cad-footer">
+                <button class="form-control btn btn-primary" type="submit">Modificar usuario</button>
+            </div>
+    </form>
+    </div>
+</div>
+<%- include("../templates/pie") %>

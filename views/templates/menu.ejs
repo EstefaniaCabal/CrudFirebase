@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"> UTSJR </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Mostrar usuarios</a>
+            <a class="nav-link active" aria-current="page" href="/mostrarProducto">Mostrar Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/nuevoUsuario">Nuevo Usuario</a>
+            <a class="nav-link" href="/nuevoProducto">Nuevo Producto</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    /* Estilo para el menú de navegación */
+    .navbar {
+      background-color: #007BFF; /* Cambia el color de fondo a un azul brillante */
+    }
+  
+    /* Estilo para los enlaces del menú */
+    .navbar-nav .nav-link {
+      color: #180707; /* Cambia el color del texto a blanco */
+      padding: 10px 15px; /* Agrega espacio de relleno alrededor de los enlaces */
+      font-size: 16px; /* Cambia el tamaño de fuente a tu preferencia */
+      transition: background-color 0.3s, color 0.3s; /* Agrega una transición suave */
+    }
+  
+    /* Estilo para el botón de búsqueda */
+    .navbar-form .form-control {
+      width: 200px; /* Cambia el ancho del campo de búsqueda a tu preferencia */
+    }
+  
+    /* Estilo para el botón de búsqueda */
+    .navbar-form .btn {
+      background-color: #fff; /* Cambia el color de fondo del botón a blanco */
+      color: #007BFF; /* Cambia el color del texto del botón a azul */
+    }
+  
+    /* Estilo para el enlace activo */
+    .nav-item.active .nav-link {
+      background-color: #fff; /* Cambia el color de fondo del enlace activo a blanco */
+      color: #007BFF; /* Cambia el color del texto del enlace activo a azul */
+      font-weight: bold; /* Hace que el enlace activo sea más destacado */
+    }
+  
+    /* Estilo para el logotipo de la barra de navegación */
+    .navbar-brand {
+      color: #7783b1; /* Cambia el color del logotipo a blanco */
+      font-size: 24px; /* Cambia el tamaño de fuente del logotipo a tu preferencia */
+      font-weight: bold; /* Añade negrita al logotipo si lo deseas */
+    }
+  </style>
+  
