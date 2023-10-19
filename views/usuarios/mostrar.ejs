@@ -2,6 +2,7 @@
 <%- include ("../templates/menu") %>
 
 <div class="container mt-5">
+  <form action="/mostrar" method="post" enctype="multipart/form-data">
     <div class="card">
         <div class="card-header">
             <h1><align center> Usuarios</h1></align>
@@ -28,7 +29,7 @@
                         <td><%= usuario.id %></td>
                         <td><%= usuario.nombre %></td>
                         <td><%= usuario.usuario %></td>
-                        <td><%= usuario.password %></td>
+                        <td><%= usuario.password.slice(0,8) %></td>
                         <td><img src="/images/<%= usuario.foto %>" width="100px"></td>
                         <td>
                             <a href="/editar/<%= usuario.id %>">Editar</a>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .login-container form {
+            text-align: center;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container mt-5">
+        <form action="/login" method="post" enctype="multipart/form-data">
+
+    <div class="header">
+        <h1>Bienvenido</h1>
+    </div>
+
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+            <input class="form-control mb-3" type="text" name="nombre" id="nombre" placeholder="Nombre" autofocus>
+            <input class="form-control mb-3" type="text" name="usuario" id="usuario" placeholder="Usuario" >
+            <input class="form-control mb-3" type="password" name="password" id="password" placeholder="Contraseña">
+            <button type="submit" value="Iniciar Sesión"> picale aqui</button>
+        </form>
+    </div>
+
+</body>
+</html>

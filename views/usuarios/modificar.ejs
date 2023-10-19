@@ -2,17 +2,20 @@
 <%- include ("../templates/menu") %>
 
 <div class="container mt-5">
-    <form action="/editar" method="post">
+    <form action="/editar" method="post" enctype="multipart/form-data">
         <div class="card">
             <div class="cad-header">
                 <h1>Modificar Usuario</h1>
             </div>
             <div class="cad-body">
-                <input type="hidden"  value="<%= user.id%>" name="id" id="id" >
+                <input type="hidden" value="<%= user.id%>" name="id" id="id" >
+                <input type="hidden" value="<%= user.password%>" name="passwordViejo" id="passwordViejo" >
+                <input type="hidden" value="<%= user.foto%>" name="fotoVieja" id="fotoVieja" >
+                <input type="hidden" value="<%= user.salt%>" name="saltViejo" id="saltViejo" >
                 <input class="form-control mb-3" type="text" value="<%= user.nombre%>" name="nombre" id="nombre" placeholder="Nombre" autofocus>
                 <input class="form-control mb-3" type="text" value="<%= user.usuario%>" name="usuario" id="usuario" placeholder="Usuario" >
-                <input class="form-control mb-3" type="password" value="<%= user.password%>" name="password" id="password" placeholder="password">
                 <input class="form-control mb-3" type="file" value="<%= user.foto%>" name="foto" id="foto" placeholder="foto">
+                <input class="form-control mb-3" type="password" name="password" id="password" placeholder="Escribe un nuevo password o en blanco para conservar">
             </div>
             <div class="cad-footer">
                 <button class="form-control btn btn-primary" type="submit">Modificar usuario</button>

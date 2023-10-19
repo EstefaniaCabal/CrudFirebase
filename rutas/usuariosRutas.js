@@ -1,14 +1,27 @@
 var ruta = require("express").Router();
 var subirArchivo=require("../middleware/subirArchivos");
-var { mostrarUsuarios, nuevoUsuario, modificarUsuario, buscarporId, borrarUsuario } = require("../bd/usuariosBD");
+var { login, mostrarUsuarios, nuevoUsuario, modificarUsuario, buscarporId, borrarUsuario } = require("../bd/usuariosBD");
+
+//--------------------------------------------------------
 
 ruta.get("/", async (req, res) => {
+  res.render("usuarios/login", { user });
+});
+
+ruta.post("/login",async (req,res)=>{
+   var error=await login(req.body);
+   res.redirect("usuarios/mostrar");
+ });
+
+ //----------------------------------------------------
+
+ruta.get("/mostrarUsuarios", async (req, res) => {
   var usuarios = await mostrarUsuarios();
   console.log(usuarios);
   res.render("usuarios/mostrar", { usuarios });
 });
 
-ruta.get("/nuevousuario",async(req,res)=>{
+ruta.get("/nuevoUsuario",async(req,res)=>{
     res.render("usuarios/nuevo");
 });
 
@@ -28,14 +41,18 @@ ruta.get("/editar/:id",async (req,res)=>{
 });
 
 ruta.post("/editar",subirArchivo(), async(req,res)=>{
-  console.log(req.file);
+  if(req.file!=undefined){
+    req.body.foto=req.file.originalname;
+  } else{
+    req.body.foto=req.file.originalname;
+  }
   var error=await modificarUsuario(req.body);
-  res.redirect("/");
+  res.redirect("usuarios/mostrar");
 });
 
 ruta.get("/borrar/:id", async (req,res)=>{
   await borrarUsuario(req.params.id);
-  res.redirect("/");
+  res.redirect("usuarios/mostrar");
 });
 
 module.exports = ruta;
